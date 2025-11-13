@@ -79,7 +79,7 @@ public class LoanCalc {
 						 mid = ((upperLimit + lowerLimit) / 2.0);
 
 		}
-		return mid; ;
+		return mid; 
     }
 
 
