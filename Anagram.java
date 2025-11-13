@@ -53,12 +53,12 @@ public class Anagram {
 	// as is. For example, the string "What? No way!" becomes "whatnoway"
 	public static String preProcess(String str) {
 		if(str == null ) return "";
-		/*String newStr = "";
+		String newStr = "";
 		for(int i = 0; i < str.length(); i++) {
-			if(str.charAt(i) !=  ' ' && str.charAt(i) !=  '\n' && str.charAt(i) !=  '\r' && str.charAt(i) !=  '\t')
+			if(str.charAt(i) !=  '\n' && str.charAt(i) !=  '\r' && str.charAt(i) !=  '\t')
 				newStr += str.charAt(i);
-		}*/
-		return str.toLowerCase();
+		}
+		return newStr.toLowerCase();
 	} 
 		public static String preProcess2(String str) {
 		if(str == null ) return "";
