@@ -55,7 +55,7 @@ public class LoanCalc {
 			paidPerTime += increment;
 
 		}
-		return paidPerTime * rate;
+		return paidPerTime;
 	}
     
     // Uses bisection search to compute an approximation of the periodical payment 
@@ -77,7 +77,7 @@ public class LoanCalc {
 				lowerLimit = mid;
 
 			if(Math.abs(endBalance(loan, rate, n, mid)) <= epsilon || upperLimit - lowerLimit <= epsilon)
-				return mid *rate ;
+				return mid ;
 
 		}
 		return mid; 
