@@ -49,6 +49,7 @@ public class LoanCalc {
 		rate = 1.0 + (rate / 100.0);
 		double paidPerTime = loan / n;
 		double balance = loan;
+		//just copied the code from the recitation and edited it to fit the assignment.
 		while (balance > epsilon) {
 			iterationCounter++;
 			balance = endBalance(loan, rate, n, paidPerTime+increment);
@@ -68,6 +69,7 @@ public class LoanCalc {
         double upperLimit = loan, lowerLimit = 0;
 		rate = 1.0 + rate / 100.0;
 		double mid = (upperLimit + lowerLimit) / 2;
+		//iterating over the numbers constantly finding the middle one in the max and min posssible values and narrowing the limits down.
 		while (Math.abs(endBalance(loan, rate, n, mid)) > epsilon) {
 			iterationCounter++;
 			 mid = ((upperLimit + lowerLimit) / 2.0);

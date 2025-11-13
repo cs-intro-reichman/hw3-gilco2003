@@ -54,7 +54,7 @@ public class Algebra {
 		return differnce;
 	}
 
-	// Returns x1 * x2
+	// Returns x1 * x2 just adding x1 to itself x2 times
 	public static int times(int x1, int x2) {
 		int mult = 0;
 		for(int i = 0; i < abs(x1) ; i++)
@@ -67,17 +67,18 @@ public class Algebra {
 
 	// Returns x^n (for n >= 0)
 	public static int pow(int x, int n) {
-		// Replace the following statement with your code
+		// same with the times function
 		int power = 1;
 		for(int i =0; i < n; i++) {
 			power = times(power, x);
 		}
+		//handling negative property
 		if(mod(n, 2) == 0)
-			power =abs(power);
+			power = abs(power);
 		return power;
 	}
 
-	// Returns the integer part of x1 / x2 
+	//using brute force
 	public static int div(int x1, int x2) {
 		int div = 1; 
 		boolean flag = true;
@@ -97,12 +98,13 @@ public class Algebra {
 
 	// Returns x1 % x2
 	public static int mod(int x1, int x2) {
-		// Replace the following statement with your code
+		// mod by definition
 		return abs(minus(x1,times(x2, div(x1, x2))));
 	}	
 
 	// Returns the integer part of sqrt(x) 
 	public static int sqrt(int x) {
+		//just brute force and making sure to return the int part.
 		int root = 0; 
 		if(x > 0) {
 		boolean flag = true;
@@ -116,10 +118,12 @@ public class Algebra {
 		}	
 		return root;
 	 }
+	 //recivies a positive number and turns it negative;
 
 	public static int turnToNegative(int x) {
 			return minus(0, x);
 	}
+	//I didn't know if I could use Math.Abs so I created my own version.
     public static int abs(int x) {
 		int sum = 0;
 		if(x >= 0)

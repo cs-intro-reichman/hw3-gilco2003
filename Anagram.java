@@ -54,13 +54,35 @@ public class Anagram {
 			if(str.charAt(i) !=  ' ' && str.charAt(i) !=  '\n' && str.charAt(i) !=  '\r' && str.charAt(i) !=  '\t')
 				newStr += str.charAt(i);
 		}
-		return newStr;
+		return newStr.toLowerCase();
 	} 
-	   
+	//A helper function that receives a string and an index and return an identical string without the character at said index.
+	   public static String removeAtIndex(String str, int index) {
+		String newStr = "";
+		for(int i = 0; i<str.length();i++){
+			if(i != index)
+				newStr += str.charAt(i);
+		}
+					System.out.println(newStr);
+
+		return newStr;
+	   }
 	// Returns a random anagram of the given string. The random anagram consists of the same
 	// characters as the given string, re-arranged in a random order. 
 	public static String randomAnagram(String str) {
-		// Replace the following statement with your code
-		return "";
+		str = preProcess(str);
+		String newStr = "";
+		int length = str.length();
+		int rand; 
+		//iteraitin over the string, adding a new character from the string each iteration 
+		//and removing it from the og string in order to not repeat it
+		while (length > 0) {
+			rand = (int)(Math.random()*(length));
+			newStr += str.charAt(rand);
+			str = removeAtIndex(str, rand);
+			length --;
+		}
+		
+		return newStr;
 	}
 }
