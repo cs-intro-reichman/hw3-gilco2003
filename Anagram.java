@@ -63,8 +63,6 @@ public class Anagram {
 			if(i != index)
 				newStr += str.charAt(i);
 		}
-					System.out.println(newStr);
-
 		return newStr;
 	   }
 	// Returns a random anagram of the given string. The random anagram consists of the same
