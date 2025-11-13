@@ -84,7 +84,7 @@ public class Anagram {
 		//iteraitin over the string, adding a new character from the string each iteration 
 		//and removing it from the og string in order to not repeat it
 		while (length > 0) {
-			rand = (int)(Math.random()*(length - 1));
+			rand = (int)(Math.random()*(length));
 			newStr += str.charAt(rand);
 			str = removeAtIndex(str, rand);
 			length --;
