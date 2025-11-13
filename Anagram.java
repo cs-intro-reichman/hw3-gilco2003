@@ -35,8 +35,8 @@ public class Anagram {
 	}
 	// Returns true if the two given strings are anagrams, false otherwise.
 	public static boolean isAnagram(String str1, String str2) {
-		str1 = preProcess2(str1).toLowerCase();
-		str2 = preProcess2(str2).toLowerCase();
+		str1 = preProcess(str1).toLowerCase();
+		str2 = preProcess(str2).toLowerCase();
 		if(str1.length() != str2.length())
 			return false;
 		for(int i=0; i < str1.length(); i++){
@@ -54,21 +54,14 @@ public class Anagram {
 	public static String preProcess(String str) {
 		if(str == null ) return "";
 		String newStr = "";
+		str = str.toLowerCase();
 		for(int i = 0; i < str.length(); i++) {
-			if(str.charAt(i) !=  ' ' && str.charAt(i) !=  '\n' && str.charAt(i) !=  '\r' && str.charAt(i) !=  '\t')
-				newStr += str.charAt(i);
-		}
-		return str.toLowerCase();
-	} 
-		public static String preProcess2(String str) {
-		if(str == null ) return "";
-		String newStr = "";
-		for(int i = 0; i < str.length(); i++) {
-			if(str.charAt(i) !=  ' ' && str.charAt(i) !=  '\n' && str.charAt(i) !=  '\r' && str.charAt(i) !=  '\t')
+			if(str.charAt(i) >= 'a' && str.charAt(i) <= 'z')
 				newStr += str.charAt(i);
 		}
 		return newStr.toLowerCase();
 	} 
+
 	//A helper function that receives a string and an index and return an identical string without the character at said index.
 	   public static String removeAtIndex(String str, int index) {
 		String newStr = "";
@@ -78,11 +71,13 @@ public class Anagram {
 		}
 		return newStr;
 	   }
+	
+
 	// Returns a random anagram of the given string. The random anagram consists of the same
 	// characters as the given string, re-arranged in a random order. 
 	public static String randomAnagram(String str) {
 		if(str == null ) return "";
-		str = preProcess2(str);
+		str = preProcess(str);
 		String newStr = "";
 		int length = str.length();
 		int rand; 
