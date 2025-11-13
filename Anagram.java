@@ -55,10 +55,10 @@ public class Anagram {
 		if(str == null ) return "";
 		String newStr = "";
 		for(int i = 0; i < str.length(); i++) {
-			if(str.charAt(i) !=  '\n' && str.charAt(i) !=  '\r' && str.charAt(i) !=  '\t')
+			if(str.charAt(i) !=  ' ' && str.charAt(i) !=  '\n' && str.charAt(i) !=  '\r' && str.charAt(i) !=  '\t')
 				newStr += str.charAt(i);
 		}
-		return newStr.toLowerCase();
+		return str.toLowerCase();
 	} 
 		public static String preProcess2(String str) {
 		if(str == null ) return "";
@@ -89,7 +89,7 @@ public class Anagram {
 		//iteraitin over the string, adding a new character from the string each iteration 
 		//and removing it from the og string in order to not repeat it
 		while (length > 0) {
-			rand = (int)(Math.random()*(length));
+			rand = (int)(Math.random()*(length - 1));
 			newStr += str.charAt(rand);
 			str = removeAtIndex(str, rand);
 			length --;
