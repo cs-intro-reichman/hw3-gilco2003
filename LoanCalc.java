@@ -2,7 +2,7 @@
 public class LoanCalc {
 	
 	static double epsilon = 0.001;  // Approximation accuracy
-	static long iterationCounter = 0;    // Number of iterations 
+	static int iterationCounter = 0;    // Number of iterations 
 	
 	// Gets the loan data and computes the periodical payment.
     // Expects to get three command-line arguments: loan amount (double),
@@ -45,7 +45,7 @@ public class LoanCalc {
 
      public static double bruteForceSolver(double loan, double rate, int n, double epsilon) {
 		// יהי אפסילון גדול מ0.
-		double increment = epsilon / 10.0;
+		double increment = 1;
 		rate = 1.0 + (rate / 100.0);
 		double paidPerTime = increment;
 		while (endBalance(loan, rate, n, paidPerTime) > epsilon) {
@@ -56,7 +56,7 @@ public class LoanCalc {
 			paidPerTime += increment;
 
 		}
-		return paidPerTime * rate;
+		return paidPerTime;
 	}
     
     // Uses bisection search to compute an approximation of the periodical payment 
@@ -79,7 +79,7 @@ public class LoanCalc {
 						 mid = ((upperLimit + lowerLimit) / 2.0);
 
 		}
-		return mid * rate ;
+		return mid; ;
     }
 
 
