@@ -43,6 +43,7 @@ public class LoanCalc {
 	// Side effect: modifies the class variable iterationCounter.
 
      public static double bruteForceSolver(double loan, double rate, int n, double epsilon) {
+		iterationCounter = 0;
 		// יהי אפסילון גדול מ0.
 		double increment = epsilon;
 		rate = 1.0 + (rate / 100.0);
