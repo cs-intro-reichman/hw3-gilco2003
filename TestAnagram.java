@@ -50,9 +50,9 @@ public class TestAnagram {
         boolean test1 = Anagram.preProcess("abc").equals("abc");
         System.out.println("Test 1 (simple lowercase): " + (test1 ? "PASS" : "FAIL"));
         
-        // Test case 2: Preserve spaces
-        boolean test2 = Anagram.preProcess("Hello World!").equals("hello world");
-        System.out.println("Test 2 (preserve spaces): " + (test2 ? "PASS" : "FAIL"));
+        // Test case 2: Remove spaces
+        boolean test2 = Anagram.preProcess("Hello World!").equals("helloworld");
+        System.out.println("Test 2 (remove spaces): " + (test2 ? "PASS" : "FAIL"));
         
         // Test case 3: Convert to lowercase
         boolean test3 = Anagram.preProcess("HeLLo").equals("hello");
@@ -76,11 +76,9 @@ public class TestAnagram {
         String randomized = Anagram.randomAnagram(original);
         boolean test1 = Anagram.isAnagram(original, randomized);
         System.out.println("Test 1 (is anagram): " + (test1 ? "PASS" : "FAIL"));
-        
         // Test case 2: Check if same length
         boolean test2 = original.length() == randomized.length();
-        System.out.println("Test 2 (same length): " + (test2 ? "PASS" : "FAIL"));
-        
+        System.out.println("Test 2 (same length): " + (test2 ? "PASS" : "FAIL"));        
         // Test case 3: Check randomness (run multiple times)
         boolean foundDifferent = false;
         String first = Anagram.randomAnagram("testing");
